@@ -1,0 +1,30 @@
+server:
+  port: 25010
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://192.168.71.129:3306/bytedance_ticket
+    driver-class-name: com.mysql.jdbc.Driver
+  redis:
+    host: 192.168.71.129
+    port: 6379
+  session:
+    store-type: redis
+  rabbitmq:
+    host: 192.168.71.129
+    port: 5672
+    virtual-host: /
+
+  task:
+    execution:
+      pool:
+        core-size: 5
+        max-size: 50
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
